@@ -30,13 +30,6 @@ add_library(lua SHARED ${lua_SOURCES})
 target_include_directories(lua PUBLIC "${LUA_DIR}/src")
 set_target_properties(lua PROPERTIES LINKER_LANGUAGE CXX)
 
-# Ensure your project uses the local Lua library
-# Assuming you have an executable or another target that depends on Lua
-
-add_executable(my_project main.cpp)  # Replace 'main.cpp' with your actual source files
-target_link_libraries(my_project PRIVATE lua)
-target_include_directories(my_project PRIVATE "${LUA_DIR}/src")
-
 # Optionally, add a message to confirm the include directories and linked libraries
 message(STATUS "Lua include directories: ${LUA_DIR}/src")
 message(STATUS "Lua library: lua")
